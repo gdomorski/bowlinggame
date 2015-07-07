@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<title>Fullstack Academy Bowling Project by Greg Domorski</title>
+<meta charset="utf-8">
+<meta name="author" content="Greg Domorski">
+<link rel="stylesheet" type="text/css" href="main.css">
+<style>
+
+  body,html{  /* make it apply to everything, everything exists in everything in those tags */
+    font-family:arial;
+  }
+
+  #message{
+    font-size:30px;
+  }
+  
+  #lane{
+    height: 102px;
+    border: solid 1px black;  /* first, style, second size, third color...*/
+    background-color:white;
+    width: 690px;
+  }
+  
+  .pin{
+    width: 30px; 
+    height: 100px;
+  }
+  
+  .sheet{
+    width:692px;
+    height: 64px;  
+    font-weight:bolder;
+    background-color:white;
+  }
+  
+  .corner{
+    width:30px;
+    height:30px;
+    float:right;
+    border:solid 1px black;
+    text-align:center;
+  }
+  
+  .corner-tenth{
+    width:30px;
+    height:30px;
+    float:left;
+    border:solid 1px black;
+    text-align:center;
+  }
+  
+  .box-tenth{
+    width:96px;
+    height:64px;
+    border:solid 1px black;
+    float:left;   
+  }
+  
+  .bottom{
+    height:30px;
+    width:62px;
+    margin-top:32px;
+    text-align:center;
+  }
+  
+  .indent{
+    margin-left:8px;
+    float:left;
+  }
+  
+  .box{
+    width:64px;
+    height:64px;
+    border:solid 1px black;
+    float:left;   
+  }
+  
+  .hidden{
+    display:none;
+  }
+  
+  .btn{
+    width:25%;
+    height:100px;
+    font-size:32px;
+  }
+  
+  .center{
+    display:block;
+    margin:auto;
+    text-align:center;
+  }
+  
+  .message-box{
+    border:solid 1px black;
+    width:690px;
+    height:64px;
+    margin-top:5%;
+    background-color:white;
+  }
+
+
+</style>
+
+</head>
+
+<body BACKGROUND="strike.jpg">
+    <div class="hidden">
+      <div id="display-frames">Frames: </div>  
+      <div id="display-score">Score: </div>
+      <div id="display-turn">Turn # 0</div>
+      <div id="display-pins">Pins Left: 0</div>
+      <div id="currentFrameScore""></div>
+    </div>
+    
+    <div class="center message-box" id="message">Welcome to Greg Domorski's bowling game. <br> I hope you have fun! Press 'Start Game' to begin</div>
+  
+    <div class="sheet center" id="sheet"></div>
+  
+    <div class="center" id="lane"></div>
+    
+    <div class="center">
+     
+      <input class="btn center" id= "startTheGame" type="button" onclick="bowlingGame()" value="Start Game"></input>
+      <input class="btn center" id="bowlButton" type="button" onclick="turn()" value="Bowl" style="display:none;"> </input>
+      <input class="btn center" id="frameButton" type="button" onclick="turn()" value="Next Frame" style="display:none;"> </input>
+      <input class="btn center" type="button" onclick="history.go(0)" value="Reset Game"></input>  
+    </div>
+</body>
+
+<script type="text/javascript" src="scoreboard.js"></script>
+<script type="text/javascript" src="frame.js"></script>
+<script type="text/javascript" src="view.js"></script>
+<script type="text/javascript" src="game.js"></script>
+<script type="text/javascript" src="main.js"></script> <!-- We want the main to load last, so it will not call things that are not loaded -->
+
+</html>
